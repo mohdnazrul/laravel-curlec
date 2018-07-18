@@ -1,0 +1,35 @@
+{
+    "name": "mohdnazrul/laravel-curlec",
+    "description": "Library to connection for Payments from CURLEC",
+    "type": "library",
+    "require": {
+        "guzzlehttp/guzzle": "^6.3"
+    },
+    "require-dev": {
+        "illuminate/support": "5.4.*",
+        "phpunit/phpunit": "^7.0.2"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Mohd Nazrul Bin Mustaffa",
+            "email": "nazrulmustaffa@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "MohdNazrul\\CURLECLaravel\\": "src",
+            "MohdNazrul\\CURLECLaravelTest\\": "tests"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "MohdNazrul\\CURLECLaravel\\CURLECServiceProvider"
+            ],
+            "aliases": {
+                "CBM": "MohdNazrul\\CURLECLaravel\\CURLECApiFacade"
+            }
+        }
+    }
+}
