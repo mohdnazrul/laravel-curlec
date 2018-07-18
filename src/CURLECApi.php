@@ -4,6 +4,7 @@
  * User: Mohd Nazrul Bin Mustaffa
  * Date: 18/07/2018
  */
+
 namespace MohdNazrul\CURLECLaravel;
 
 use GuzzleHttp\Exception\GuzzleException;
@@ -21,7 +22,10 @@ class CURLECApi
 
     public function doTransaction($method, $parameter)
     {
-        $url = $this->serviceURL.$parameter;
+        if (substr($this->serviceURL, -1) != '/')
+            $this->serviceURL = $this->serviceURL . '/';
+
+        $url = $this->serviceURL . $parameter;
 
         $curl = curl_init();
         curl_setopt_array($curl, array(
@@ -40,7 +44,7 @@ class CURLECApi
         $err = curl_error($curl);
         curl_close($curl);
 
-        if(!empty($err)){
+        if (!empty($err)) {
             return $err;
         }
 
