@@ -1,4 +1,4 @@
-# CURLEC.COM
+# Laravel-CURLEC - CURLEC.COM
 A new Eletronic Bank to Bank Direct Debit System delivered by Curlec Sdn Bhd
 
 ## .env file
